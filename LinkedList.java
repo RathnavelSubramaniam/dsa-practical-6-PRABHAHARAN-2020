@@ -66,9 +66,25 @@ public static void main(String[] args) {
             }
            }
     }
-public void insertBegin() 
+public void insertBegin(int data) 
     {    
-        // TYPE YOUR CODE HERE   
+        //Create a new node    
+        Node newNode = new Node(data);    
+        //Checks if the list is empty    
+        if(head == null)
+        {    
+   //If the list is empty, both head and tail will point to new node    
+            head = newNode;    
+            tail = newNode;    
+        }    
+        else 
+        {    
+//newNode will be added before head such that newNode's next will point to head    
+            newNode.next = head;    
+            //newNode will become the new head of the list    
+            head=newNode;
+            System.out.println("Element Inserted");
+        }    
     } 
 public void displayList() {
         Node current = head;
